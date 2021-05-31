@@ -1,0 +1,10 @@
+print("hello" + "say what")
+print(2+2)
+# this is a comment 
+#another comment 
+x = 2
+if (x == 2):
+	print("yes, x equals 2")
+else:
+	print("no, it does not")
+
