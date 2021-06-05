@@ -15,3 +15,5 @@ The lines below in ```copyText.py``` ensure that you will not have to retype dou
 string_1 = string_1.replace('”','"')
 string_1 = string_1.replace('“', '"')
 ```
+## Helpful resources:
+[pip commands explained](https://medium.com/swlh/heres-a-quick-way-to-learn-about-pip-in-python-18617d466c59) 
