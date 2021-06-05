@@ -3,7 +3,7 @@
 A simple python script that reads a .docx file and copies its content into a .txt file.  This can really come in handy if you want to write your code in Microsoft Word first to test how good you are at coding.  Then you can run this script and copy your code from your .docx file into a text editor like Notepad++.  When you are ready, you can change the extension of your Notepad++ file to .py and also run it there.  
 
 ## The Steps:
-1. Create a virtual environment inside the Reading-Word-Files- folder.
+1. Create a virtual environment inside the **Reading-Word-Files-** folder.
 2. Open up your command prompt and go inside the Reading-Word-Files- folder, in which you created your virtual environment folder. 
 3. Activate your virtual environment. 
 4. Then run this command: ```pip install -r requirements.txt```.  You can check all your newly installed libraries by typing ```pip list``` and hit ENTER. 
