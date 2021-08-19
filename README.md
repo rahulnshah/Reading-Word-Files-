@@ -17,3 +17,6 @@ string_1 = string_1.replace('“', '"')
 ```
 ## Helpful resources:
 [pip commands explained](https://medium.com/swlh/heres-a-quick-way-to-learn-about-pip-in-python-18617d466c59) 
+
+## TODO:
+- Be able to copy code between two given lines into Notepad++.
