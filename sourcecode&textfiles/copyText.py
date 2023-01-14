@@ -1,18 +1,17 @@
-import os
-import docx
+from docx import Document
 
 def getText(filename):
-    doc = docx.Document(filename)
+    document = Document(filename)
     fullText = ""
-    for para in doc.paragraphs:
+    for para in document.paragraphs:
         fullText = fullText + para.text + "\n"
-    return fullText #this is a string like so: "sdfsfsd\nasdsfsf\n
+    document.save(filename)
+    return fullText # this is a string like so: "sdfsfsd\nasdsfsf\n
     
-# call getText(with file name passed )
-string_1 = getText("someText.docx")
-string_1 = string_1.replace('”','"')
-string_1 = string_1.replace('“', '"')
+# call getText with filename passed 
+if __name__ == "__main__":
+    text_of_docx_file = getText("sourcecode&textfiles\someText.docx").replace('”','"').replace('“', '"')
 
-with open("mysourcecode.txt", 'w') as writer:
-    writer.write(string_1)
+    with open("sourcecode&textfiles\mysourcecode.txt", 'w') as writer:
+        writer.write(text_of_docx_file)
 

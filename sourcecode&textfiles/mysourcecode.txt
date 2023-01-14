@@ -1,3 +1,4 @@
+if __name__ == "__main__":
 print("hello" + "say what")
 print(2+2)
 # this is a comment 
