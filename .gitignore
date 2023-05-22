@@ -3,6 +3,10 @@
 *~
 __pycache__
 
+# docx and text files
+*.docx
+*.txt
+
 # Env
 .env
 myvenv/
