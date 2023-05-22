@@ -33,4 +33,4 @@ $RECYCLE.BIN/
 .vscode/
 .history/
 *.code-workspacetest-scripts/
-test-scripts/
+test_scripts/
