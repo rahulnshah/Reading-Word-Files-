@@ -1,24 +1,21 @@
 # Reading-Word-Files-
 ## What is it?
-A simple python script that reads a .docx file and copies its content into a .txt file.  This can really come in handy if you want to write your code in Microsoft Word first to test how good you are at coding.  Then you can run this script and copy your code from your .docx file into a text editor like Notepad++.  When you are ready, you can change the extension of your Notepad++ file to .py and also run it there.  
+A simple collaboration of a python script that reads a ```.docx``` file and copies its content into a ```.txt``` file and a perl script that generates a ```.py``` file for each corresponding txt file.  This can really come in handy if you want to write your code in Microsoft Word first to test how good you are at coding.  
 
 ## The Steps:
-1. Create a virtual environment inside the **Reading-Word-Files-** folder.
+1. Clone this repo and create a virtual environment inside the **Reading-Word-Files-** folder.
 2. Open up your command prompt and go inside the Reading-Word-Files- folder, in which you created your virtual environment folder. 
 3. Activate your virtual environment. 
-4. Then run this command: ```pip install -r requirements.txt```.  You can check all your newly installed libraries by typing ```pip list``` and hit ENTER. 
-5. Make changes to **some.docx** file if you would like inside your project folder and run this command: ```python copyText.py```
+4. Then run this command: ```pip install -r requirements.txt```.  You can check all your newly installed libraries by running ```pip list```. 
+5. Make a ```.docx``` file in the cloned directory, add some python code to it that you want to test, and run ```python copy_code_to_text_file_of.py "your_src_code.docx"```
+6. The step above will make a text file called ```your_src_code.txt```.
+7. Now in a linux environment such as an Ubuntu VM or in your dual boot, you can run ```perl rename_and_run_txt_files.pl``` within the same directory as your generated txt files.  This perl script will then generate a python script corresponding to each txt file inside a separate folder called ```test_scripts```.  That's all for today.  See you next time!
 
 ## Line-by-line explanation:
-The lines below in ```copyText.py``` ensure that you will not have to retype double quotation marks around strings in your code, as you would after doing ```Ctrl+V``` in a .py file.
+The line below in ```copy_code_to_text_file_of.py``` ensure that you will not have to retype proper double quotation marks around strings in your code, as you would after doing ```Ctrl+V``` in a .py file.
 ```python
-string_1 = string_1.replace('”','"')
-string_1 = string_1.replace('“', '"')
+    text_of_docx_file = getText(sys.argv[1]).replace('”','"').replace('“', '"')
 ```
 ## Helpful resources:
-- [pip commands explained](https://medium.com/swlh/heres-a-quick-way-to-learn-about-pip-in-python-18617d466c59) 
-
- 
-
-## TODO:
-- Be able to copy code between two given lines into Notepad++.
+- [How to make a venv with python](https://realpython.com/python-virtual-environments-a-primer/) 
+- [pip commands explained](https://medium.com/swlh/heres-a-quick-way-to-learn-about-pip-in-python-18617d466c59)
