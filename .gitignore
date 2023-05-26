@@ -6,7 +6,7 @@ __pycache__
 # docx and text files
 *.docx
 *.txt
-
+*.log
 # Env
 .env
 myvenv/
