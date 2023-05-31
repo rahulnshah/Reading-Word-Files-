@@ -10,7 +10,7 @@ __pycache__
 # Env
 .env
 myvenv/
-
+word_files/
 # Database
 db.sqlite3
 
