@@ -13,22 +13,28 @@ def getText(filename):
     return fullText
 
 if __name__ == "__main__":
-    # initalize  the log setting
+    # initalize the log settings
     logging.basicConfig(filename='app.log', level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s", datefmt="%d-%b-%y %H:%M:%S")
     try:
+        test_scripts_folder = "test_scripts"
+        # make a test scripts folder in cwd
+        if not os.path.exists(test_scripts_folder):
+            logging.info(f"{test_scripts_folder} made in {os.getcwd()}")
+            os.mkdir(test_scripts_folder)
+
         for afile in os.scandir(sys.argv[1]):
             if afile.is_file() and os.path.splitext(afile)[1] == '.docx':
                 logging.info('Trying to modify file content to add proper coding syntax')
                 text_of_docx_file = getText(afile).replace('”','"').replace('“', '"')
-
-                with open(f"{os.path.splitext(afile)[0]}.txt", 'w+') as writer:
+                # put all generated text files in root folder for the perl script to organize
+                relative_path = os.path.join(os.getcwd(), test_scripts_folder, f"{os.path.splitext(afile.name)[0]}.txt")
+                with open(relative_path, 'w+') as writer:
                     writer.write(text_of_docx_file)
+                logging.info(f"{afile.name} has been converted to a text file")
             elif not(afile.is_file()):
-                logging.info(f"{afile} is not a file.")
+                logging.info(f"{afile.name} is not a file.")
             else:
-                logging.info(f"{afile} is not .docx file")
-
-        logging.info("Your docx files have been converted to text files.")
+                logging.info(f"{afile.name} is not .docx file")
     except IOError as e:
         logging.error(f"error occured: {str(e)}")
     except Exception as e:
