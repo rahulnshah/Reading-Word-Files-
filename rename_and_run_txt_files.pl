@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 # change into the specified directory
-$dir = "test_scripts";
+my $dir = "test_scripts";
 
 chdir( $dir ) or die "Couldn't go inside $dir directory, $!";
 
